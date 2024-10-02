@@ -1,6 +1,8 @@
+@baseUrl = http://localhost:3333
+
 ###
 # @name create_restaurant
-POST http://localhost:3333/restaurants
+POST {{baseUrl}}/restaurants
 Content-Type: application/json
 
 {
@@ -12,7 +14,7 @@ Content-Type: application/json
 
 ###
 # @name authenticate_manager
-POST http://localhost:3333/authenticate
+POST {{baseUrl}}/authenticate
 Content-Type: application/json
 
 {
@@ -20,5 +22,12 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3333/auth-links/authenticate?code=sfh2yhfyfhw1qxv9xowkpz0j&redirect=http%3A%2F%2Flocalhost%3A5173
+# @name authenticate_from_link
+GET {{baseUrl}}/auth-links/authenticate?code=g36c8z1ljxanzeuog5ea2spe&redirect=http%3A%2F%2Flocalhost%3A5173
+Content-Type: application/json
+
+###
+# @name get_profile
+GET {{baseUrl}}/me
+Cookie: auth=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYmFpemxtcHBpaDFocTdhcHFjejNpdTIiLCJyZXN0YXVyYW50SWQiOiJlcXhhMjI5dDFuemVhcGcxeTJ4bDMxZHcifQ.l9p0DUjiWSrB644a1PVQ1eYHS0Bq_iSxV0X-znGHP_E
 Content-Type: application/json
