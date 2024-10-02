@@ -1,7 +1,9 @@
+/* eslint-disable drizzle/enforce-delete-with-where */ 
+
 import { faker } from '@faker-js/faker'
-import { users, restaurants } from './schema'
-import { db } from './connection'
 import chalk from 'chalk'
+import { db } from './connection'
+import { restaurants, users } from './schema'
 
 /**
  * Reset database
