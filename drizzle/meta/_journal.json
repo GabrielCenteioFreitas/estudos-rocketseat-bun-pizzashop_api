@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1727840189206,
+      "tag": "0000_wakeful_beyonder",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1727840312014,
+      "tag": "0001_right_sway",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1727840421186,
+      "tag": "0002_skinny_ken_ellis",
+      "breakpoints": true
+    }
+  ]
+}
