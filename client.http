@@ -1,0 +1,11 @@
+###
+# @name create_restaurant
+POST http://localhost:3333/restaurants
+Content-Type: application/json
+
+{
+  "name": "Gabriel",
+  "email": "gabriel@example.com",
+  "phone": "123456789",
+  "restaurantName": "Gabriel's Restaurant"
+}
