@@ -33,9 +33,32 @@ GET {{baseUrl}}/me
 Cookie: {{authCookie}}
 Content-Type: application/json
 
-
 ###
 # @name get_order_details
 GET {{baseUrl}}/orders/ajqxrryc2iwo86hbwopn7te7
+Cookie: {{authCookie}}
+Content-Type: application/json
+
+###
+# @name approve_order
+PATCH {{baseUrl}}/orders/bipmkf0x2a1u3v5qiudmn1tm/approve
+Cookie: {{authCookie}}
+Content-Type: application/json
+
+###
+# @name cancel_order
+PATCH {{baseUrl}}/orders/bipmkf0x2a1u3v5qiudmn1tm/cancel
+Cookie: {{authCookie}}
+Content-Type: application/json
+
+###
+# @name dispatch_order
+PATCH {{baseUrl}}/orders/bipmkf0x2a1u3v5qiudmn1tm/dispatch
+Cookie: {{authCookie}}
+Content-Type: application/json
+
+###
+# @name deliver_order
+PATCH {{baseUrl}}/orders/bipmkf0x2a1u3v5qiudmn1tm/deliver
 Cookie: {{authCookie}}
 Content-Type: application/json
