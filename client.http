@@ -1,4 +1,5 @@
 @baseUrl = http://localhost:3333
+@authCookie = auth=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYmFpemxtcHBpaDFocTdhcHFjejNpdTIiLCJyZXN0YXVyYW50SWQiOiJlcXhhMjI5dDFuemVhcGcxeTJ4bDMxZHcifQ.l9p0DUjiWSrB644a1PVQ1eYHS0Bq_iSxV0X-znGHP_E
 
 ###
 # @name create_restaurant
@@ -29,5 +30,12 @@ Content-Type: application/json
 ###
 # @name get_profile
 GET {{baseUrl}}/me
-Cookie: auth=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYmFpemxtcHBpaDFocTdhcHFjejNpdTIiLCJyZXN0YXVyYW50SWQiOiJlcXhhMjI5dDFuemVhcGcxeTJ4bDMxZHcifQ.l9p0DUjiWSrB644a1PVQ1eYHS0Bq_iSxV0X-znGHP_E
+Cookie: {{authCookie}}
+Content-Type: application/json
+
+
+###
+# @name get_order_details
+GET {{baseUrl}}/orders/ajqxrryc2iwo86hbwopn7te7
+Cookie: {{authCookie}}
 Content-Type: application/json
