@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3333
-@authCookie = auth=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmYmFpemxtcHBpaDFocTdhcHFjejNpdTIiLCJyZXN0YXVyYW50SWQiOiJlcXhhMjI5dDFuemVhcGcxeTJ4bDMxZHcifQ.l9p0DUjiWSrB644a1PVQ1eYHS0Bq_iSxV0X-znGHP_E
+@authCookie = auth=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoMmYyN2VpczlvbmpreGN3c2dwaTZ6ZjciLCJyZXN0YXVyYW50SWQiOiJnMG96ZzRqdXVwNzNmb2trM2M2cHMzOXgifQ.TcPsGLgQ5X_5-LKU3_fQNhWD6O7HRDqU_LbrdOA2kHc
 
 ###
 # @name create_restaurant
@@ -60,5 +60,11 @@ Content-Type: application/json
 ###
 # @name deliver_order
 PATCH {{baseUrl}}/orders/bipmkf0x2a1u3v5qiudmn1tm/deliver
+Cookie: {{authCookie}}
+Content-Type: application/json
+
+###
+# @name get_orders
+GET {{baseUrl}}/orders?pageIndex=0
 Cookie: {{authCookie}}
 Content-Type: application/json
