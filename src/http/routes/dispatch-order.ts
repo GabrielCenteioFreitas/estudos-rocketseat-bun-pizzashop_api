@@ -2,7 +2,7 @@ import Elysia, { t } from "elysia";
 import { auth } from "../auth";
 import { UnauthorizedError } from "../errors/unauthorized-error";
 import { db } from "../../db/connection";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { orders } from "../../db/schema";
 
 export const dispatchOrder = new Elysia()
@@ -17,7 +17,10 @@ export const dispatchOrder = new Elysia()
 
     const order = await db.query.orders.findFirst({
       where(fields, { eq }) {
-        return eq(fields.id, orderId)
+        return and(
+          eq(fields.id, orderId),
+          eq(fields.restaurantId, restaurantId),
+        )
       },
     })
 
