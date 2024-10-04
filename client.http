@@ -68,3 +68,9 @@ Content-Type: application/json
 GET {{baseUrl}}/orders?pageIndex=0
 Cookie: {{authCookie}}
 Content-Type: application/json
+
+###
+# @name get_month_receipt
+GET {{baseUrl}}/metrics/month-receipt
+Cookie: {{authCookie}}
+Content-Type: application/json
