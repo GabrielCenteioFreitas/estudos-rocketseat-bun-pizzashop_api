@@ -35,7 +35,7 @@ export const getOrders = new Elysia()
         )
       )
 
-    const [ammountOfOrdersQuery, allOrders] = await Promise.all([
+    const [amountOfOrdersQuery, allOrders] = await Promise.all([
       db
         .select({ count: count() })
         .from(baseQuery.as('baseQuery')),
@@ -58,14 +58,14 @@ export const getOrders = new Elysia()
         }),
     ])
 
-    const ammountOfOrders = ammountOfOrdersQuery[0].count
+    const amountOfOrders = amountOfOrdersQuery[0].count
 
     return {
       orders: allOrders,
       meta: {
         pageIndex,
         perPage: 10,
-        totalCount: ammountOfOrders,
+        totalCount: amountOfOrders,
       }
     }
   }, {
