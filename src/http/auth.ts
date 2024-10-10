@@ -3,6 +3,7 @@ import jwt from "@elysiajs/jwt";
 import { Elysia, t, type Static } from "elysia";
 import { env } from "../env";
 import { UnauthorizedError } from "./errors/unauthorized-error";
+import { NotAManagerError } from "./errors/not-a-manager-error";
 
 const jwtPayload = t.Object({
   sub: t.String(),
@@ -49,6 +50,19 @@ export const auth = new Elysia()
           userId: payload.sub,
           restaurantId: payload.restaurantId,
         }
+      },
+    }
+  })
+  .derive({ as: 'scoped' }, ({ getCurrentUser }) => {
+    return {
+      getManagedRestaurantId: async () => {
+        const { restaurantId } = await getCurrentUser()
+
+        if (!restaurantId) {
+          throw new NotAManagerError()
+        }
+
+        return restaurantId
       },
     }
   })
