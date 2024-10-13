@@ -52,7 +52,7 @@ export const getDayOrdersAmount = new Elysia()
 
 
     return {
-      amount: todayOrdersAmount?.amount,
+      amount: todayOrdersAmount?.amount || 0,
       diffFromYesterday: Number((diffFromYesterday - 100).toFixed(2))
     }
   })

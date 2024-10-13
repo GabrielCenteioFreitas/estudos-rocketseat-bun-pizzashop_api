@@ -49,7 +49,7 @@ export const getMonthReceipt = new Elysia()
       : null
 
     return {
-      receipt: currentMonthReceipt?.receipt,
+      receipt: currentMonthReceipt?.receipt || 0,
       diffFromLastMonth: diffFromLastMonth
         ? Number((diffFromLastMonth - 100).toFixed(2))
         : 0,

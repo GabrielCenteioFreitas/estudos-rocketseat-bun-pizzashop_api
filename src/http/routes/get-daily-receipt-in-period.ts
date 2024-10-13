@@ -30,7 +30,7 @@ export const getDailyReceiptInPeriod = new Elysia()
     const receiptsPerDay = await db
       .select({
         date: sql<string>`TO_CHAR(${orders.createdAt}, 'DD/MM')`,
-        receit: sum(orders.totalInCents).mapWith(Number),
+        receipt: sum(orders.totalInCents).mapWith(Number),
       })
       .from(orders)
       .where(
